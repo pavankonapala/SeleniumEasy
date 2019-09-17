@@ -4,7 +4,7 @@ public class CheckboxDemoElements
 
 {
 	private String xpath_link_CheckboxDemo="//a[text()='Input Forms']//following::ul[1]/li[2]";
-	private String linkText_CheckboxDemo="Checkbox Demo";
+	//private String linkText_CheckboxDemo="Checkbox Demo";
 	private String xpath_Checkbox_SingleCheckbox="//input[contains(@id,'Age')]";
 	private String xpath_outputMessage_Checkbox="//div[contains(text(),'Success')]";
 	
@@ -16,5 +16,18 @@ public class CheckboxDemoElements
 	private String xpath_checkBox_Option3="//label[text()='Option 3']";
 	private String xpath_checkBox_Option4="//label[text()='Option 4']";
 	
+	public String getCheckBoxDemoLocator()
+	{
+		return xpath_link_CheckboxDemo;
+	}
 	
+	public String getsingleCheckboxLocator()
+	{
+		return xpath_Checkbox_SingleCheckbox;
+	}
+	
+	public String getcheckboxOutputMessageLocator()
+	{
+		return xpath_outputMessage_Checkbox;
+	}
 }

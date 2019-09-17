@@ -2,6 +2,7 @@ package com.pages;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -78,5 +79,24 @@ public class TestCases_InputForms
 			System.out.println("Test case is Failed.");
 		}
 		
+	}
+	
+	@Test
+	public void singleCheckBox_withXPATH()
+	{
+		elementActions.clickLinkByXPATH(driver, simpleFormDemoelements.getinputFormsLocator());
+		elementActions.clickLinkByXPATH(driver, checkboxElements.getCheckBoxDemoLocator());
+		elementActions.clickLinkByXPATH(driver,checkboxElements.getsingleCheckboxLocator());
+		String output=elementActions.getDisplayMessageByXPATH(driver, checkboxElements.getcheckboxOutputMessageLocator());
+		
+		if(output.equals(""))
+		{
+			System.out.println("Test Case is Failed.");
+		}
+		else
+		{
+			System.out.println("Test Case is Passed.");
+			System.out.println(output);
+		}
 	}
 }
