@@ -30,4 +30,32 @@ public class CheckboxDemoElements
 	{
 		return xpath_outputMessage_Checkbox;
 	}
+	
+	public String getCheckAllButtonLocator()
+	{
+		return xpath_button_checkAll;
+	}
+	
+	public String getUncheckAllButtonLocator()
+	{
+		return xpath_button_uncheckAll;
+	}
+	
+	public String getOptn1CheckBoxLocator()
+	{
+		return xpath_checkBox_Option1;
+	}
+	
+	public String getOptn2CheckBoxLocator()
+	{
+		return xpath_checkBox_Option2;
+	}
+	public String getOptn3CheckBoxLocator()
+	{
+		return xpath_checkBox_Option3;
+	}
+	public String getOptn4CheckBoxLocator()
+	{
+		return xpath_checkBox_Option4;
+	}
 }

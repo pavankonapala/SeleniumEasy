@@ -1,5 +1,7 @@
 package com.pages;
 
+import static org.testng.Assert.assertTrue;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -82,7 +84,7 @@ public class TestCases_InputForms
 	}
 	
 	@Test
-	public void singleCheckBox_withXPATH()
+	public void singleCheckBox()
 	{
 		elementActions.clickLinkByXPATH(driver, simpleFormDemoelements.getinputFormsLocator());
 		elementActions.clickLinkByXPATH(driver, checkboxElements.getCheckBoxDemoLocator());
@@ -98,5 +100,19 @@ public class TestCases_InputForms
 			System.out.println("Test Case is Passed.");
 			System.out.println(output);
 		}
+	}
+	
+	@Test
+	public void multipleCheckbox()
+	{
+		elementActions.clickLinkByXPATH(driver, simpleFormDemoelements.getinputFormsLocator());
+		elementActions.clickLinkByXPATH(driver, checkboxElements.getCheckBoxDemoLocator());
+		assertTrue(driver.findElement(By.xpath(checkboxElements.getCheckAllButtonLocator())).getText().equals("Check All"));
+		
+		elementActions.clickButtonByXPATH(driver,checkboxElements.getCheckAllButtonLocator() );
+		assertTrue(driver.findElement(By.xpath(checkboxElements.getUncheckAllButtonLocator())).getText().equals("Uncheck All"));
+		
+		elementActions.clickButtonByXPATH(driver, checkboxElements.getOptn2CheckBoxLocator());
+		assertTrue(driver.findElement(By.xpath(checkboxElements.getCheckAllButtonLocator())).getText().equals("Check All"));
 	}
 }
